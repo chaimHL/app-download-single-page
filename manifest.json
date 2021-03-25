@@ -1,5 +1,5 @@
 {
-    "name" : "ZTOWarehouse",
+    "name" : "ZTO_download",
     "appid" : "__UNI__D7024BF",
     "description" : "",
     "versionName" : "1.0.0",
@@ -89,6 +89,17 @@
         "appid" : "wxf10a9bc81769ed55",
         "setting" : {
             "urlCheck" : true
+        }
+    },
+    "h5" : {
+        "router" : {
+            "base" : "./"
+        },
+        "title" : "app_download",
+        "optimization" : {
+            "treeShaking" : {
+                "enable" : true
+            }
         }
     }
 }

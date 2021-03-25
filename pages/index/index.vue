@@ -3,18 +3,22 @@
     <view class="main">
       <!-- 二维码 -->
       <view class="qr-wrap">
-        二维码
+        <view>
+            <ay-qrcode ref="qrcode" :modal="modal_qr" :url="qrUrl" @hideQrcode="hideQrcode" :height="135" :width="135" />
+        </view>
       </view>
       <view class="qr-text">APP</view>
       <!-- 按钮 -->
       <view class="btn-wrap">
-        <u-button :ripple="true" ripple-bg-color="#3BC3F3" type="primary" class="btn">
+        <!-- 下载 APP -->
+        <u-button :ripple="true" ripple-bg-color="#3BC3F3" type="primary" class="btn" @click="handleGetApp">
           <view class="icon-wrap">
             <u-image src="@/static/img/app.png" mode="widthFix"></u-image>
           </view>
           APP
         </u-button>
-        <u-button :ripple="true" ripple-bg-color="#3BC3F3" type="primary" class="btn">
+        <!-- 下载 PDA -->
+        <u-button :ripple="true" ripple-bg-color="#3BC3F3" type="primary" class="btn" @click="handleGetPda">
           <view class="icon-wrap">
             <u-image src="@/static/img/pda.png" mode="widthFix"></u-image>
           </view>
@@ -27,14 +31,56 @@
 </template>
 
 <script>
-	import api from '@/common/api/index.js'
+  import ayQrcode from "@/components/ay-qrcode/ay-qrcode.vue"
+	import { getApp, getPda } from '@/common/api/index.js'
+
 	export default {
+    components: {
+      ayQrcode
+    },
 		data() {
 			return {
-
+        // 二维码相关参数
+        modal_qr: false,
+        qrUrl: "", // 要生成的二维码值
 			}
 		},
-		computed: {}
+    onLoad() {
+      this.showQrcode() // 加载生成二维码
+    },
+		methods: {
+      // 展示二维码
+      showQrcode() {
+          let _this = this;
+          this.modal_qr = true;
+          getApp('安卓').then(res => {
+            this.qrUrl = res.data.url
+            this.$nextTick(() => {
+              _this.$refs.qrcode.crtQrCode()
+            })
+          })
+      },
+
+      //传入组件的方法
+      hideQrcode() {
+        this.modal_qr = false;
+      },
+
+      // 点击下载 app
+      handleGetApp() {
+        getApp('安卓').then(res => {
+          this.qrUrl = res.data.url
+          location.href = res.data.url
+        })
+      },
+
+      // 点击下载 pda
+      handleGetPda() {
+        getPda().then(res => {
+          location.href = res.data.url
+        })
+      }
+    }
 	}
 </script>
 

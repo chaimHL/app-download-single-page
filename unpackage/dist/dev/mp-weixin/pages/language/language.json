@@ -1,9 +1,0 @@
-{
-  "navigationBarTitleText": "",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "u-no-network": "/uview-ui/components/u-no-network/u-no-network",
-    "logo": "/components/Logo/Logo",
-    "language-form": "/components/LanguageForm/LanguageForm"
-  }
-}

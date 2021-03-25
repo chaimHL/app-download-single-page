@@ -1,49 +1,20 @@
 import { request } from '@/common/request.js'
-import qs from 'querystring'
 
-export function login(data) {
+// 获取最新 app 下载链接
+export function getApp(deviceName) {
   return request({
-    url: '/connect/token',
-    method: 'post',
-    headers: { 'content-type': 'application/x-www-form-urlencoded' },
-    data: qs.stringify(data)
+    url: '/app/system/version',
+    method: 'get',
+    data: {
+      deviceName
+    }
   })
 }
 
-export function getInfo() {
+// 获取最新 pda 下载链接
+export function getPda() {
   return request({
-    url: '/api/identity/my-profile',
+    url: '/app/pda/version',
     method: 'get'
-  })
-}
-
-export function logout() {
-  return request({
-    url: '/api/account/logout',
-    method: 'get'
-  })
-}
-
-export function register(data) {
-  return request({
-    url: '/api/account/register',
-    method: 'post',
-    data: data
-  })
-}
-
-export function setUserInfo(data) {
-  return request({
-    url: '/api/identity/my-profile',
-    method: 'put',
-    data: data
-  })
-}
-
-export function changePassword(data) {
-  return request({
-    url: '/api/identity/my-profile/change-password',
-    method: 'post',
-    data: data
   })
 }

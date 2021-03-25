@@ -1,9 +1,6 @@
 {
   "pages": [
-    "pages/login/login",
-    "pages/package-abnormal-list/package-abnormal-list",
-    "pages/index/index",
-    "pages/language/language"
+    "pages/index/index"
   ],
   "subPackages": [],
   "window": {

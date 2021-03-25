@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "u-modal": "/uview-ui/components/u-modal/u-modal",
-    "u-line-progress": "/uview-ui/components/u-line-progress/u-line-progress"
-  },
-  "component": true
-}
