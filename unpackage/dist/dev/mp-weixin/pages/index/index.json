@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "u-empty": "/uview-ui/components/u-empty/u-empty",
+    "u-no-network": "/uview-ui/components/u-no-network/u-no-network",
+    "download-progress": "/components/DownloadProgress/DownloadProgress"
+  }
+}

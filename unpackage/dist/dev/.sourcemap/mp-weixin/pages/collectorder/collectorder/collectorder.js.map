@@ -1,0 +1,1 @@
+{"version":3,"sources":["uni-app:///main.js"],"names":["createPage","Page"],"mappings":";;;;;;;;;;kDAAA;AACA;AACA,+H;AACAA,UAAU,CAACC,qBAAD,CAAV,C","file":"pages/collectorder/collectorder/collectorder.js","sourcesContent":["import 'uni-pages';\nimport Vue from 'vue'\nimport Page from './pages/collectorder/collectorder/collectorder.vue'\ncreatePage(Page)"],"sourceRoot":""}

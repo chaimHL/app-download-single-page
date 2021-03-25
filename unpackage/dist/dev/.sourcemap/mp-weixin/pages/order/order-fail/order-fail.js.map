@@ -1,0 +1,1 @@
+{"version":3,"sources":["uni-app:///main.js"],"names":["createPage","Page"],"mappings":";;;;;;;;;;kDAAA;AACA;AACA,gO;AACAA,UAAU,CAACC,kBAAD,CAAV,C","file":"pages/order/order-fail/order-fail.js","sourcesContent":["import 'uni-pages';\nimport Vue from 'vue'\nimport Page from './pages/order/order-fail/order-fail.vue'\ncreatePage(Page)"],"sourceRoot":""}

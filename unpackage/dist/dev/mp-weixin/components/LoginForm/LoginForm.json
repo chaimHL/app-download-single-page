@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "u-button": "/uview-ui/components/u-button/u-button",
+    "keyboard-listener": "/components/keyboard-listener/keyboard-listener"
+  }
+}
