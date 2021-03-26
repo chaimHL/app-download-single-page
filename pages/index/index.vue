@@ -3,11 +3,9 @@
     <view class="main">
       <!-- 二维码 -->
       <view class="qr-wrap">
-        <view>
-            <ay-qrcode ref="qrcode" :modal="modal_qr" :url="qrUrl" @hideQrcode="hideQrcode" :height="135" :width="135" />
-        </view>
+        <ay-qrcode ref="qrcode" :modal="modal_qr" :url="qrUrl" @hideQrcode="hideQrcode" :height="135" :width="135" />
       </view>
-      <view class="qr-text">APP</view>
+      <view class="qr-text">Scan code to download APP <br> 扫码下载 APP </view>
       <!-- 按钮 -->
       <view class="btn-wrap">
         <!-- 下载 APP -->
@@ -43,10 +41,11 @@
         // 二维码相关参数
         modal_qr: false,
         qrUrl: "", // 要生成的二维码值
+        pixelRatio: 0 // 获取设备像素比，解决二维码居中的问题
 			}
 		},
     onLoad() {
-      this.showQrcode() // 加载生成二维码
+     this.showQrcode() // 加载生成二维码
     },
 		methods: {
       // 展示二维码
@@ -94,16 +93,18 @@
   }
   .main {
     position: absolute;
-    top: 34vh;
+    top: 32vh;
     left: 50%;
     transform: translateX(-50%);
   }
   .qr-wrap {
-    margin: 0 auto 20rpx;
-    width: 270rpx;
-    height: 270rpx;
+    margin: 0 auto 28rpx;
+    width: 135px;
+    height: 135px;
     border-radius: 10rpx;
-    background-color: #E9E9EB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .qr-text {
     text-align: center;

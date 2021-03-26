@@ -27,7 +27,7 @@
 				show: true,
 				imagePath: '',
 				// qrcode_id: 'qrcode_id',
-				marginLeft: 0,
+				marginLeft: 0
 			}
 		},
 		props: {
@@ -66,9 +66,7 @@
 			h_w_img: {
 				type: Number,
 				default: 30
-			},
-
-
+			}
 		},
 		computed: {
 			style_w_h() {
@@ -77,10 +75,10 @@
 				var width = parseInt(that.width);
 				var style = '';
 				if (height > 0) {
-					style = `height:${height*2}rpx;`;
+					style = `height:${height*1}px;`;
 				}
 				if (width > 0) {
-					style += `width:${width*2}rpx;`;
+					style += `width:${width*1}px;`;
 				}
 
 				return style;
@@ -91,10 +89,10 @@
 				var width = parseInt(that.h_w_img);
 				var style = '';
 				if (height > 0) {
-					style = `height:${height*2}rpx;`;
+					style = `height:${height*1}px;`;
 				}
 				if (width > 0) {
-					style += `width:${width*2}rpx;z-index: 2;`;
+					style += `width:${width*1}px;z-index: 2;`;
 				}
 
 				return style;
@@ -124,7 +122,6 @@
 			//#ifdef MP
 			//_this.marginLeft = 40;
 			// #endif
-
 		},
 		methods: {
 
